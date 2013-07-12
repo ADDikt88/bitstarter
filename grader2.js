@@ -76,7 +76,7 @@ var checkUrlFile = function(urlfile, checksfile) {
 			}
     
                 var outJson = JSON.stringify(out, null, 4);
-                console.log(checkJson);
+                console.log(outJson);
             }
 	});
     return out;
@@ -100,14 +100,14 @@ if(require.main == module) {
     if(program.url){
 	console.log(program.url);
 	checkUrlFile(program.url, program.checks)
-	
+	//console.log(outJson);
     }
     else {
         var checkJson = checkHtmlFile(program.file, program.checks);
 	var outJson = JSON.stringify(checkJson, null, 4);
-        //console.log(checkJson);                                                                                                        
+        console.log(outJson);                                                                                                        
     }
-    console.log(outJson);
+    //console.log(outJson);
 
 }
 else {
