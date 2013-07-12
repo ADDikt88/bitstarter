@@ -59,7 +59,7 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     return out;
 };
 
-var checkUrllFile = function(urlfile, checksfile) {
+var checkUrlFile = function(urlfile, checksfile) {
     $ = cheerio.load(urlfile);
     var checks = loadChecks(checksfile).sort();
     var out = {};
