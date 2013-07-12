@@ -85,6 +85,7 @@ if(require.main == module) {
         .option('-u, --url <url_link>', 'Path to url', clone(assertUrlExists), URLLINK_DEFAULT)
         .parse(process.argv);
     if(program.url){
+	console.log(program.url);
 	rest.get("http://shrouded-sea-2714.herokuapp.com/").on('complete', function(result) {
 	    if (result instanceof Error) {
 		sys.puts('Error: ' + result.message);
@@ -99,7 +100,7 @@ if(require.main == module) {
 	var checkJson = checkHtmlFile(program.file, program.checks);
     }
     console.log(outJson);
-    console.log(program.url);
+   
 } 
 else {
     exports.checkHtmlFile = checkHtmlFile;
